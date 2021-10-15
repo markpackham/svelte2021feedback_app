@@ -1,7 +1,6 @@
-<script>
-import FeedbackList from './components/FeedbackList.svelte'
+import { writable } from "svelte/store";
 
-let feedback = [
+export const FeedbackStore = writable([
   {
     id: 1,
     rating: 10,
@@ -17,9 +16,4 @@ let feedback = [
     rating: 8,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
   },
-]
-</script>
-
-<main class="container">
-<FeedbackList {feedback} />
-</main>
+]);
