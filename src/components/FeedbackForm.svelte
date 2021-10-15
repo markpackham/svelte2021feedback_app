@@ -29,7 +29,7 @@
   }
 
   const handleSubmit = () => {
-
+    if(text.trim().length > min) {
     const newFeedback = {
       id: uuidv4(),
       text,
@@ -38,6 +38,7 @@
     dispatch('add-feedback', newFeedback)
 
     text= ''
+  }
   }
 
 </script>
