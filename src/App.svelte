@@ -4,8 +4,7 @@ import FeedbackList from './components/FeedbackList.svelte'
 import FeedbackStats from './components/FeedbackStats.svelte'
 export let feedback = [{}]
 
-$: count = feedback.length
-$: average = feedback.reduce((a, {rating})=> a + rating,0) / count
+
 
 const addFeedback = (e) =>{
   const newFeedback = e.detail
@@ -20,7 +19,8 @@ const addFeedback = (e) =>{
 
 <main class="container">
 <FeedbackForm on:add-feedback={addFeedback} />
-<FeedbackStats {count} {average} />
+<!-- <FeedbackStats {count} {average} /> -->
+<FeedbackStats />
 <!-- <FeedbackList on:delete-feedback={deleteFeedback}/> -->
 <FeedbackList />
 </main>
