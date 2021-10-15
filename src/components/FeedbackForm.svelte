@@ -30,7 +30,7 @@
   }
 
   const handleSubmit = () => {
-    if(text.trim().length > min) {
+
     const newFeedback = {
       id: uuidv4(),
       text,
@@ -41,7 +41,6 @@
       })
 
     text= ''
-  }
   }
 
 </script>
