@@ -12,14 +12,15 @@ const addFeedback = (e) =>{
   feedback = [newFeedback, ...feedback]
 }
 
-const deleteFeedback = (e) =>{
-    const itemId = e.detail
-    feedback = feedback.filter((item) => item.id != itemId)
-}
+// const deleteFeedback = (e) =>{
+//     const itemId = e.detail
+//     feedback = feedback.filter((item) => item.id != itemId)
+// }
 </script>
 
 <main class="container">
 <FeedbackForm on:add-feedback={addFeedback} />
 <FeedbackStats {count} {average} />
-<FeedbackList on:delete-feedback={deleteFeedback}/>
+<!-- <FeedbackList on:delete-feedback={deleteFeedback}/> -->
+<FeedbackList />
 </main>

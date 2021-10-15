@@ -19,6 +19,7 @@ import FeedbackItem  from './FeedbackItem.svelte'
 
 {#each $FeedbackStore as fb (fb.id)}
 <div in:scale out:fade="{{duration: 500}}">
-    <FeedbackItem item={fb} on:delete-feedback />
+    <!-- <FeedbackItem item={fb} on:delete-feedback /> -->
+    <FeedbackItem item={fb} />
 </div>
 {/each}
