@@ -1,10 +1,44 @@
 <script>
-	let name = 'Timmy';
+	let firstName = 'Timmy';
+	let lastName = 'Smith';
+	let color = 'blue';
+	let showText = false;
+	let users = [
+		{
+			id: '1',
+			name: 'Timmy'
+		},
+		{
+			id: '2',
+			name: 'Sara'
+		},
+		{
+			id: '3',
+			name: 'Bob'
+		},
+	]
+
+	$: name = `${firstName} ${lastName}`;
+
+	const toggle = () =>{
+		color = color === 'blue' ? 'red' : 'blue'
+		showText = !showText;
+		users = [...users, {id: '4', name: 'David'}]
+	}
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1 style="color: {color}">Hello {name}!</h1>
+	{#if showText}
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorum assumenda perspiciatis nisi repudiandae accusantium? Eaque magni fuga et earum. Quis ab tempore dignissimos est tempora veniam placeat voluptatibus non.</p>
+	{:else}
+	<p>No text</p>
+	{/if}
+	<button on:click={toggle}>Click</button>
+
+	{#each users as user (user.id)}
+		<h3>{user.name}</h3>
+	{/each}
 </main>
 
 <style>
