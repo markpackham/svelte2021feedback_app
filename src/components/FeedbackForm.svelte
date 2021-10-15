@@ -1,13 +1,12 @@
 <script>
     import {v4 as uuidv4} from 'uuid'
     import {FeedbackStore} from '../stores'
-    import {createEventDispatcher} from 'svelte'
+    // import {createEventDispatcher} from 'svelte'
     import Card from './Card.svelte'
     import Button from './Button.svelte'
     import RatingSelect from './RatingSelect.svelte';
-    import FeedbackStats from './FeedbackStats.svelte';
 
-  const dispatch = createEventDispatcher
+  // const dispatch = createEventDispatcher
 
   let text = ''
   let rating = 10
